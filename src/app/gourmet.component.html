@@ -1,0 +1,5 @@
+<div id="gourmet">
+  <div *ngFor="let genre of genres | async" class="genre-list" >
+      {{genre.code}}（{{genre.name}}）
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div id="search-station">
+  <div style="float:left;">
+    <h3>駅名検索</h3>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="宇都宮"/>
+    <!-- 非同期オブジェクトをそのまま表示するため、Aync Pipeを指定 -->
+    <div *ngFor="let station of stations | async" (click)="onSelect(station)" class="search-result" >
+      {{station.name}}（{{station.prefectureName}}）
+    </div>
+  </div>
+  <!-- 非同期オブジェクトをそのまま表示するため、Aync Pipeを指定 -->
+  <div *ngIf="selectedStation | async" style="float:left;" class="information">
+    <div class="station-title">駅名：{{station.name}}（{{station.prefectureName}} | {{station.latitude}}, {{station.longitude}}）</div>
+    <weather [lat]="lat" [lon]="lon"></weather>
+    <map [latitude_d]="station.latitude_d" [longitude_d]="station.longitude_d"></map>
+  </div>
+  <!-- <gourmet style="float:left;" class="gourmet"></gourmet> -->
+</div>
+  

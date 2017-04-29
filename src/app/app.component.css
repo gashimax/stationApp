@@ -1,0 +1,12 @@
+.app-body {
+  margin: 10px;
+}
+
+.credit{
+  margin: 10px;
+  font-size: 10px;
+  line-height: 150%;
+  color: gray;
+}
+
+a:link { color: #1E90FF; }

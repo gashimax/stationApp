@@ -1,0 +1,11 @@
+<div *ngIf="lat > 0 && lng > 0">
+  <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    <!--
+    <div *ngFor="let shop of shops.data">
+      {{shop.name}}
+      <sebm-google-map-marker [latitude]="shop.lat" [longitude]="shop.lng" [label]="shop.name"></sebm-google-map-marker>
+    </div>
+    -->
+  </sebm-google-map>
+</div>
